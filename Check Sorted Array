@@ -1,0 +1,16 @@
+//Check Sorted Array
+//https://www.naukri.com/code360/problems/ninja-and-the-sorted-check_6581957?utm_source=striver&utm_medium=website&utm_campaign=codestudio_a_zcourse
+//https://www.youtube.com/watch?v=37E9ckMDdTk&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB
+
+int isSorted(int n, vector<int> a) {
+    // Write your code here.
+   for(int i =1;i<n;i++){
+     if(a[i]>=a[i-1]){
+          
+     }
+     else{
+       return false;
+     }
+   }
+   return true;
+}
