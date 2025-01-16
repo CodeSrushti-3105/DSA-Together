@@ -1,0 +1,27 @@
+// Rotate array
+//https://www.naukri.com/code360/problems/rotate-array_1230543?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems&leftPanelTabValue=PROBLEM
+//https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB&index=2
+
+vector<int> rotateArray(vector<int>arr, int k) {
+   int n = arr.size(); // Get the size of the array.
+    if (n == 0) return arr; // If the array is empty, return it as is.
+
+    k = k % n; // Reduce k to the effective number of rotations.
+
+    if (k == 0) return arr; // If no rotation is needed, return the array.
+
+    // Create a new vector to store the result.
+    vector<int> rotatedArray;
+
+    // Append elements from index k to the end of the array.
+    for (int i = k; i < n; i++) {
+        rotatedArray.push_back(arr[i]);
+    }
+
+    // Append the first k elements to the end of the rotated array.
+    for (int i = 0; i < k; i++) {
+        rotatedArray.push_back(arr[i]);
+    }
+
+    return rotatedArray;
+}
