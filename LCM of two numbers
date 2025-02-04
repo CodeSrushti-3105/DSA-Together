@@ -1,0 +1,27 @@
+//https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/lcm-of-two-numbers?tab=submissions
+//LCM of two numbers
+class Solution {
+public:
+    int LCM(int n1,int n2) {
+       int lcm;
+
+       int n = max(n1,n2);
+       int i = 1;
+
+       while(1) {
+            // Variable to store multiple
+            int mul = n * i;
+            
+            /* Checking if multiple is common
+            common for both n1 and n2 */
+            if(mul % n1 == 0 && mul % n2 == 0) {
+                lcm = mul;
+                break;
+            }
+            i++;
+        }
+        
+        // Return the stored LCM
+        return lcm;
+    }
+};
