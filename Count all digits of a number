@@ -1,0 +1,15 @@
+//https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/count-all-digits-of-a-number
+//Count all digits of a number
+class Solution {
+public:
+    int countDigit(int n) {
+    int digitSum = 0;      
+        if (n == 0) return 1; // Edge case: If n is 0, it has 1 digit.
+
+        while (n > 0) {         
+            digitSum++;         
+            n = n / 10; // Remove the last digit
+        }     
+        return digitSum; 
+    }
+};
