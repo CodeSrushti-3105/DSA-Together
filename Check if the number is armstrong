@@ -1,0 +1,29 @@
+//https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/check-if-the-number-if-armstrong?tab=submissions
+//Check if the number is armstrong
+
+  class Solution {
+public:
+    bool isArmstrong(int n) {
+        // Find the number of digits in the number
+        int original = n;
+        int numDigits = 0;
+        while (n > 0) {
+            numDigits++;
+            n /= 10;
+        }
+
+        // Reset n to the original number
+        n = original;
+        
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sum += pow(digit, numDigits); // Raise each digit to the power of numDigits
+            n /= 10;
+        }
+
+        // Return true if the sum is equal to the original number
+        return sum == original;
+    }
+};
+
