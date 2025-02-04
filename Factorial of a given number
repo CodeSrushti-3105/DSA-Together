@@ -1,0 +1,12 @@
+//https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/factorial-of-a-given-number?tab=submissions
+//Factorial of a given number
+class Solution {
+public:
+    int factorial(int n) {
+       int fact=1;
+       for(int i = 1;i<=n;i++){
+         fact=fact*i;
+       }
+       return fact;
+    }
+};
