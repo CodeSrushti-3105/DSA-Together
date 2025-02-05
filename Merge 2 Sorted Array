@@ -1,0 +1,38 @@
+// Merge 2 Sorted Array
+//https://www.youtube.com/watch?v=wvcQg43_V8U&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB&index=2
+vector < int > sortedArray(vector < int > a, vector < int > b) {
+    // Write your code here
+    vector<int>result;
+    int i = 0;
+    int j = 0;
+    while(i<a.size() && j<b.size()){
+        if(a[i]<b[j]){
+            if(result.empty() || result.back() != a[i])
+            result.push_back(a[i]);
+            i++;
+        }
+        else if(a[i]>b[j]){
+            if(result.empty() || result.back() != b[j])
+            result.push_back(b[j]);
+            j++;
+        }
+        else{
+            if(result.empty() || result.back() != a[i])
+            result.push_back(a[i]);
+            i++;
+            j++;
+        }
+    }
+
+    while(i<a.size()){
+        if(result.empty() || result.back() != a[i])
+        result.push_back(a[i]);
+        i++;
+    }
+    while(j<b.size()){
+        if(result.empty() || result.back() != b[j])
+        result.push_back(b[j]);
+        j++;
+    }
+    return result;
+}
