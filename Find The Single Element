@@ -1,0 +1,25 @@
+// Find The Single Element
+//https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1100s
+#include<vector>
+
+int getSingleElement(vector<int> &arr){
+	// Write your code here.
+	    int low = 0, high = arr.size() - 1;
+
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+
+        // Ensure mid is even
+        if (mid % 2 == 1) {
+            mid--;
+        }
+
+        if (arr[mid] == arr[mid + 1]) {
+            low = mid + 2;
+        } else {
+            high = mid;
+        }
+    }
+
+    return arr[low];	
+}
