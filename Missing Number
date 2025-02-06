@@ -1,0 +1,11 @@
+//Missing Number
+//https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1100s
+
+int missingNumber(vector<int>&a, int N) {
+    // Write your code here.
+    int totalsum = N*(N+1)/2;
+
+    int actualsum = accumulate(a.begin(),a.end(),0);
+
+    return totalsum-actualsum;
+}
