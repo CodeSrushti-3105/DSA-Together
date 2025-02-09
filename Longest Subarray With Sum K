@@ -1,0 +1,26 @@
+//Longest Subarray With Sum K
+//https://www.youtube.com/watch?v=frf7qxiN2qU&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB&index=4
+
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    // Write your code here
+    int left = 0;
+    int right = 0;
+    long long sum = 0;
+    int maxLen = 0;
+
+    while(right < a.size()){
+        sum+=a[right];
+
+        while(sum>k && left <= right){
+            sum -= a[left];
+            left++;
+        }
+
+        if(sum==k){
+            maxLen= max(maxLen,right-left+1);
+        }
+
+        right++;
+    }
+    return maxLen; 
+}
