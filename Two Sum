@@ -1,0 +1,19 @@
+// Two Sum
+//https://www.youtube.com/watch?v=UXDSeD9mN-k&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB&index=5
+//https://www.naukri.com/code360/problems/reading_6845742?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems&leftPanelTabValue=SUBMISSION
+string read(int n, vector<int> book, int target)
+{
+    // Write your code here.
+    int left= 0;
+    int right = n-1;
+    sort(book.begin(),book.end());
+    while(left<right){
+        int sum = book[right] + book[left];
+        if(sum==target){
+            return "YES";
+        }
+        else if( sum < target) left++;
+        else right--;
+    }
+    return "NO";
+}
