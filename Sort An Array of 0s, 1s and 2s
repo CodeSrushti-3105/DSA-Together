@@ -1,0 +1,27 @@
+// Sort An Array of 0s, 1s and 2s
+//https://www.naukri.com/code360/problems/sort-an-array-of-0s-1s-and-2s_892977?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems&leftPanelTabValue=SUBMISSION
+//https://www.youtube.com/watch?v=tp8JIuCXBaU&list=PLgUwDviBIf0rENwdL0nEH0uGom9no0nyB&index=6
+#include <bits/stdc++.h> 
+void sortArray(vector<int>& arr, int n)
+{
+    // Write your code here
+    int low = 0;
+    int mid = 0;
+    int high = n-1;
+    while(mid<=high){
+        if(arr[mid] == 0){
+            swap(arr[low],arr[mid]);
+            low++;
+            mid++;
+        }
+        else if(arr[mid] == 1){
+            mid++;
+
+        }
+        else{
+            swap(arr[mid],arr[high]);
+            
+            high--;
+        }
+    }
+}
