@@ -1,0 +1,30 @@
+// Maximum Erasure Value
+class Solution {
+public:
+    int maximumUniqueSubarray(vector<int>& nums) {
+        int visited[10001] = {0};
+
+        int start = 0, sum = 0, maxScore = 0;
+
+        for (int end = 0; end < nums.size(); ++end) {
+            int num = nums[end];
+
+            // If this number is already in the subarray, move 'start' forward
+            while (visited[num]) {
+                visited[nums[start]] = 0;  // remove from window
+                sum -= nums[start];        // subtract from sum
+                start++;
+            }
+
+            // Add new number to window
+            visited[num] = 1;
+            sum += num;
+
+            // Update max score
+            if (sum > maxScore)
+                maxScore = sum;
+        }
+
+        return maxScore;
+    }
+};
