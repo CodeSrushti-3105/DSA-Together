@@ -1,0 +1,18 @@
+//Leaders in an Array
+class Solution {
+public:
+    vector<int> leaders(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> result;
+        int MaxValue = INT_MIN;
+
+        for(int i = n-1;i >= 0;i--){
+            if(nums[i] > MaxValue){
+                result.push_back(nums[i]);
+                MaxValue = nums[i];
+            }
+        }
+        reverse(result.begin(),result.end());
+        return result;
+    }
+};
